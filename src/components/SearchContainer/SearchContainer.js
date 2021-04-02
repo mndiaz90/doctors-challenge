@@ -13,7 +13,7 @@ const SearchContainer = (props) => {
                 </select>
             </div>
             <div id="searchContainer">
-                <input type="text" placeholder="Search by name or upin" />
+                <input type="text" placeholder="Search by name or upin" onChange={props.onChangeInput} />
             </div>
         </div>
     </>

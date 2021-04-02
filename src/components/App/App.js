@@ -6,9 +6,12 @@ import DoctorsTable from "../DoctorsTable/DoctorsTable";
 const App = (props) => {
     const [doctorsList, setDoctorsList] = useState([]);
     const [selected, setSelected] = useState("all");
+    const [inputSearch, setInputSearch] = useState("");
 
     let filteredDoctors = doctorsList.filter((doctor) => {
-        return selected === "all" ? true : doctor.available == true
+        return (doctor.name.toLowerCase().includes(inputSearch.toLowerCase().trim())
+            || doctor.upin.includes(inputSearch.trim()))
+            && (selected === "all" ? true : doctor.available == true)
     })
 
     useEffect(() => {
@@ -19,11 +22,15 @@ const App = (props) => {
         setSelected(event.target.value)
     }
 
+    const onChangeInput = (event) => {
+        setInputSearch(event.target.value)
+    }
+
     return <>
         <div className="row">
             <h2>Doctors</h2>
         </div>
-        <SearchContainer onChangeSelect={onChangeSelect} />
+        <SearchContainer onChangeSelect={onChangeSelect} onChangeInput={onChangeInput} />
         <DoctorsTable doctors={filteredDoctors} />
     </>
 }
