@@ -26,12 +26,12 @@ const App = (props) => {
         setInputSearch(event.target.value)
     }
 
-
     const updateDoctors = (modifiedDoctor)=>{
-        const doctorIndex = filteredDoctors.findIndex((doctor => doctor.upin == modifiedDoctor.upin));
+        let newListDoctors = [...doctorsList]
+        const doctorIndex = newListDoctors.findIndex((doctor => doctor.upin == modifiedDoctor.upin));
 
-        filteredDoctors[doctorIndex].available = modifiedDoctor.available;
-        setDoctorsList(filteredDoctors);
+        newListDoctors[doctorIndex].available = modifiedDoctor.available;
+        setDoctorsList(newListDoctors);
     }
 
     return <>
