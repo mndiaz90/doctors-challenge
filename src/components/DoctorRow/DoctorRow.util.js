@@ -1,7 +1,7 @@
-const baseUrl = "http://localhost:3030"
+import config from "../../../config"
 
 export const changeDoctorAvailability = (doctor) => {
-    return fetch(`${baseUrl}/doctors/${doctor.upin}`, {
+    return fetch(`${config.serverEndpoint}/doctors/${doctor.upin}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'

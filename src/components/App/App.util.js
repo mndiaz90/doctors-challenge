@@ -1,7 +1,7 @@
-const baseUrl = "http://localhost:3030"
+import config from "../../../config"
 
 export const getDoctorsList = (htmlDoctorsTable) => {
-    return fetch(baseUrl + "/doctors")
+    return fetch(`${config.serverEndpoint}/doctors`)
         .then((response) => response.json())
         .then((doctors) => mergeDoctorsData(doctors, htmlDoctorsTable))
         .catch((error) => console.log(error))
