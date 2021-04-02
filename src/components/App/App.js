@@ -26,12 +26,20 @@ const App = (props) => {
         setInputSearch(event.target.value)
     }
 
+
+    const updateDoctors = (modifiedDoctor)=>{
+        const doctorIndex = filteredDoctors.findIndex((doctor => doctor.upin == modifiedDoctor.upin));
+
+        filteredDoctors[doctorIndex].available = modifiedDoctor.available;
+        setDoctorsList(filteredDoctors);
+    }
+
     return <>
         <div className="row">
             <h2>Doctors</h2>
         </div>
         <SearchContainer onChangeSelect={onChangeSelect} onChangeInput={onChangeInput} />
-        <DoctorsTable doctors={filteredDoctors} />
+        <DoctorsTable doctors={filteredDoctors} updateDoctors = {updateDoctors} />
     </>
 }
 

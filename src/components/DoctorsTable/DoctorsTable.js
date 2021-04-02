@@ -16,7 +16,7 @@ const DoctorTable = (props) => {
             <tbody id="doctors">
                 {
                     props.doctors.map((doctor) => {
-                        return <DoctorRow key={doctor.upin} doctor={doctor} />
+                        return <DoctorRow key={doctor.upin} doctor={doctor} updateDoctors= {props.updateDoctors}/>
                     })
                 }
             </tbody>
