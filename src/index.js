@@ -1,9 +1,10 @@
 import "./index.css";
 import React from "react";
 import { render } from "react-dom";
+import getDoctorsTable from "./index.util"
 import App from "./components/App/App";
 
 render(
-    <App />,
+    <App doctorsTable={getDoctorsTable()} />,
     document.querySelector(".main-container")
 );

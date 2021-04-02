@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const DoctorRow = () => {
+const DoctorRow = (props) => {
+    const [doctor, setDoctor] = useState(props.doctor)
+
     return <>
-        <tr>
-            <td>202029</td>
-            <td>John Doe</td>
-            <td>92037</td>
-            <td>La Jolla</td>
+        <tr data-upin={doctor.upin} className={doctor.available ? "available_doctor" : "unavailable_doctor"}>
+            <td>{doctor.upin}</td>
+            <td>{doctor.name}</td>
+            <td>{doctor.zipcode}</td>
+            <td>{doctor.city}</td>
             <td>
                 <button className="button button-outline">
-                    Mark as Available
+                    {doctor.available ? 'Mark as Unavailable' : 'Mark as Available'}
                 </button>
             </td>
         </tr>

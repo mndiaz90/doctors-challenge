@@ -1,7 +1,7 @@
 import React from "react";
 import DoctorRow from "../DoctorRow/DoctorRow";
 
-const DoctorTable = () => {
+const DoctorTable = (props) => {
     return <div className="row">
         <table>
             <thead>
@@ -14,7 +14,11 @@ const DoctorTable = () => {
                 </tr>
             </thead>
             <tbody id="doctors">
-                <DoctorRow />
+                {
+                    props.doctors.map((doctor) => {
+                        return <DoctorRow key={doctor.upin} doctor={doctor} />
+                    })
+                }
             </tbody>
         </table>
     </div >
