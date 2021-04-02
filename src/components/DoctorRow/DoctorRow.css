@@ -1,0 +1,38 @@
+.rowDoctor {
+  border-bottom: transparent;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 100ms ease-in-out;
+}
+
+.rowDoctor td {
+  flex: 1;
+}
+
+.rowDoctor:hover {
+  transform: translateY(4px);
+}
+
+.rowDoctor button {
+  width: 20rem;
+  color: #fff;
+  margin-bottom: 0;
+  border: none;
+}
+
+.button_available {
+  background-color: rgb(90, 129, 90) !important;
+  border: 0.1rem solid rgb(90, 129, 90);
+}
+
+.button_available:hover {
+  background-color: rgb(90, 129, 90);
+}
+
+.button_unavailable {
+  background-color: rgb(161, 98, 98) !important;
+  border: 0.1rem solid rgb(161, 98, 98);
+}
+
+.button_unavailable:hover {
+  background-color: rgb(161, 98, 98);
+}

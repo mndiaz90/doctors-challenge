@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { changeDoctorAvailability } from "./DoctorRow.util"
+import "./DoctorRow.css"
 
 const DoctorRow = (props) => {
     const [doctor, setDoctor] = useState(props.doctor)
@@ -13,13 +14,18 @@ const DoctorRow = (props) => {
     }
 
     return <>
-        <tr data-upin={doctor.upin} className={doctor.available ? "available_doctor" : "unavailable_doctor"}>
+        <tr data-upin={doctor.upin} className="rowDoctor" style={doctor.available ? {} : {
+            textDecoration: "line-through",
+            fontStyle: "italic",
+            background: "rgb(229 234 236)"
+        }}
+        >
             <td>{doctor.upin}</td>
             <td>{doctor.name}</td>
             <td>{doctor.zipcode}</td>
             <td>{doctor.city}</td>
             <td>
-                <button className="button button-outline" onClick={() => onClickButton(doctor)}>
+                <button className={doctor.available ? "button_unavailable" : "button_available"} onClick={() => onClickButton(doctor)}>
                     {doctor.available ? 'Mark as Unavailable' : 'Mark as Available'}
                 </button>
             </td>
