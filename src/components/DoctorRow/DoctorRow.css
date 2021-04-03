@@ -5,7 +5,12 @@
 }
 
 .rowDoctor td {
-  flex: 1;
+  padding: 1.2rem 1.5rem;
+}
+
+.rowDoctor td:last-child{
+  text-align: center;
+  width: 23%;
 }
 
 .rowDoctor:hover {
@@ -14,25 +19,18 @@
 
 .rowDoctor button {
   width: 20rem;
-  color: #fff;
   margin-bottom: 0;
-  border: none;
-}
 
-.button_available {
-  background-color: rgb(90, 129, 90) !important;
-  border: 0.1rem solid rgb(90, 129, 90);
+  background-color: rgb(134 142 162 / 88%) ;
+  border: 0.1rem solid rgb(134 142 162 / 88%);
 }
 
 .button_available:hover {
   background-color: rgb(90, 129, 90);
-}
-
-.button_unavailable {
-  background-color: rgb(161, 98, 98) !important;
-  border: 0.1rem solid rgb(161, 98, 98);
+  border: 0.1rem solid  rgb(90, 129, 90);
 }
 
 .button_unavailable:hover {
   background-color: rgb(161, 98, 98);
+  border: 0.1rem solid rgb(161, 98, 98);
 }
