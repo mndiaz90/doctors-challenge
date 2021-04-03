@@ -6,7 +6,7 @@ const DoctorTable = (props) => {
         <table>
             <thead>
                 <tr>
-                    <th>Upin</th>
+                    <th style={{ padding: "1.2rem 1.5rem" }}>Upin</th>
                     <th>Name</th>
                     <th>ZipCode</th>
                     <th>City</th>
@@ -16,13 +16,12 @@ const DoctorTable = (props) => {
             <tbody id="doctors">
                 {
                     props.doctors.map((doctor) => {
-                        return <DoctorRow key={doctor.upin} doctor={doctor} updateDoctors= {props.updateDoctors}/>
+                        return <DoctorRow key={doctor.upin} doctor={doctor} updateDoctors={props.updateDoctors} />
                     })
                 }
             </tbody>
         </table>
     </div >
-
 }
 
 export default DoctorTable

@@ -3,7 +3,7 @@ import React from "react"
 const SearchContainer = (props) => {
     return <>
         <div className="row">
-            <div className="column column-20">
+            <div className="column column-20" style={{ marginTop: '6px' }}>
                 Filter by:
             </div>
             <div className="column column-20">
