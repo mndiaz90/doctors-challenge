@@ -1,11 +1,17 @@
 :root{
-  --background : #F7F7F7;
+  --background : #f7f7f74f;
 }
 
 .container.main-container {
-  max-width: 80rem;
-  padding-bottom: 7.5rem;
-  padding-top: 7.5rem;
+  max-width: 100rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
 
+.main-container tbody{
   background: var(--background);
+}
+
+.main-container input:focus, select:focus{
+  border-color: #d1d1d1;
 }
