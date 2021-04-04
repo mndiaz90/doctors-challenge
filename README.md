@@ -33,6 +33,8 @@ _Note: The `--id` param passed to json-server (in `package.json`) was not workin
 ### Run the tests
 - Run `npm test`
 
+### Deploy
+Make shure your deploy runs the `npm run build` command, it will minify and optimize the code for production in the `/dist` folder
 ### Author
 ---
 <sub><b>Mayler Navarro</b></sub> </br>
