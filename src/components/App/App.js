@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getDoctorsList } from "./App.util"
+import { getDoctorsList } from "./App.util";
 import SearchContainer from "../SearchContainer/SearchContainer";
 import DoctorsTable from "../DoctorsTable/DoctorsTable";
-import loadingGif from '../../../public/images/loading.gif'
+import loadingGif from '../../../public/images/loading.gif';
 
 const App = (props) => {
     const [doctorsList, setDoctorsList] = useState([]);
@@ -19,22 +19,22 @@ const App = (props) => {
     useEffect(() => {
         getDoctorsList(props.doctorsTable).then((doctors) => {
             if (doctors) {
-                setDoctorsList(doctors)
-                setLoading(false)
+                setDoctorsList(doctors);
+                setLoading(false);
             }
         });
     }, [])
 
     const onChangeSelect = (event) => {
-        setSelected(event.target.value)
+        setSelected(event.target.value);
     }
 
     const onChangeInput = (event) => {
-        setInputSearch(event.target.value)
+        setInputSearch(event.target.value);
     }
 
     const updateDoctors = (modifiedDoctor) => {
-        let newListDoctors = [...doctorsList]
+        let newListDoctors = [...doctorsList];
         const doctorIndex = newListDoctors.findIndex((doctor => doctor.upin == modifiedDoctor.upin));
 
         newListDoctors[doctorIndex].available = modifiedDoctor.available;

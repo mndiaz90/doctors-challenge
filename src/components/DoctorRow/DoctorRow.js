@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { changeDoctorAvailability } from "./DoctorRow.util"
-import "./DoctorRow.css"
+import React from "react";
+import { changeDoctorAvailability } from "./DoctorRow.util";
+import "./DoctorRow.css";
 
 const DoctorRow = (props) => {
     const onClickButton = (doctor) => {
         changeDoctorAvailability(doctor).then((modifiedDoctor) => {
-            modifiedDoctor.city = doctor.city
-            modifiedDoctor.zipcode = doctor.zipcode
+            modifiedDoctor.city = doctor.city;
+            modifiedDoctor.zipcode = doctor.zipcode;
 
-            props.updateDoctors(modifiedDoctor)
+            props.updateDoctors(modifiedDoctor);
         });
     }
 

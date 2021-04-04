@@ -1,6 +1,6 @@
-import config from "../../../config"
+import config from "../../../config";
 
-export const changeDoctorAvailability = (doctor) => {
+export const changeDoctorAvailability = async (doctor) => {
     return fetch(`${config.serverEndpoint}/doctors/${doctor.upin}`, {
         method: 'PATCH',
         headers: {
@@ -10,7 +10,12 @@ export const changeDoctorAvailability = (doctor) => {
             available: !doctor.available
         })
     })
-        .then((response) => response.json())
-        .then((modifiedDoctor) => modifiedDoctor)
-        .catch((error) => console.log(error))
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw `Error: ${response.status} ${response.statusText}`
+            }
+        })
+        .catch((error) => alert(error))
 }
