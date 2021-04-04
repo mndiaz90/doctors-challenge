@@ -3,6 +3,7 @@
 }
 
 .container.main-container {
+  display: none;
   max-width: 100rem;
   padding-bottom: 3rem;
   padding-top: 3rem;

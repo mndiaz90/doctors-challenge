@@ -8,3 +8,5 @@ render(
     <App doctorsTable={getDoctorsTable()} />,
     document.querySelector(".main-container")
 );
+
+document.getElementsByClassName("main-container")[0].style.display = 'block';
