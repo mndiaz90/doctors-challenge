@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { getDoctorsList } from "./App.util"
 import SearchContainer from "../SearchContainer/SearchContainer";
 import DoctorsTable from "../DoctorsTable/DoctorsTable";
+import loadingGif from '../../../public/images/loading.gif'
 
 const App = (props) => {
     const [doctorsList, setDoctorsList] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [selected, setSelected] = useState("all");
     const [inputSearch, setInputSearch] = useState("");
 
@@ -15,7 +17,12 @@ const App = (props) => {
     })
 
     useEffect(() => {
-        getDoctorsList(props.doctorsTable).then((doctors) => setDoctorsList(doctors));
+        getDoctorsList(props.doctorsTable).then((doctors) => {
+            if (doctors) {
+                setDoctorsList(doctors)
+                setLoading(false)
+            }
+        });
     }, [])
 
     const onChangeSelect = (event) => {
@@ -26,7 +33,7 @@ const App = (props) => {
         setInputSearch(event.target.value)
     }
 
-    const updateDoctors = (modifiedDoctor)=>{
+    const updateDoctors = (modifiedDoctor) => {
         let newListDoctors = [...doctorsList]
         const doctorIndex = newListDoctors.findIndex((doctor => doctor.upin == modifiedDoctor.upin));
 
@@ -39,7 +46,11 @@ const App = (props) => {
             <h2>Doctors</h2>
         </div>
         <SearchContainer onChangeSelect={onChangeSelect} onChangeInput={onChangeInput} />
-        <DoctorsTable doctors={filteredDoctors} updateDoctors = {updateDoctors} />
+        {
+            loading ? <div className="divLoading">
+                <img src={loadingGif} alt="loading..." />
+            </div> : <DoctorsTable doctors={filteredDoctors} updateDoctors={updateDoctors} />
+        }
     </>
 }
 
