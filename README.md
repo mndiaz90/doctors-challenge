@@ -23,8 +23,8 @@ _Note: The `--id` param passed to json-server (in `package.json`) was not workin
 - [Jest](https://jestjs.io/)
 
 # How to use
-1. Clone the project `git clone git@github.com:mndiaz90/oowlish-challenge.git`
-2. Move into it `cd oowlish-challenge`
+1. Clone the project `git clone git@github.com:mndiaz90/doctors-challenge.git`
+2. Move into it `cd doctors-challenge`
 3. Run `npm install` to install dependencies
 4. Run `npm start` and voilà!
 
