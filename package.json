@@ -1,7 +1,7 @@
 {
   "name": "jquery-testee",
   "version": "1.0.0",
-  "description": "Oowlish JQuery Test",
+  "description": "Doctors challenge",
   "main": "index.js",
   "license": "MIT",
   "private": true,
