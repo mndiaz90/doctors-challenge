@@ -1,5 +1,3 @@
-# Oowlish 
-
 ## The Task
 You just received a task for fixing a HTML page index.html , but you don't have access to the main HTML file, or
 can change how the data is served from the server. The only resources you can use are CSS and JavaScript. The page
