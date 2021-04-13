@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DoctorContext } from "../../context/DoctorContext";
 import DoctorRow from "../DoctorRow/DoctorRow";
 
-const DoctorTable = (props) => {
+const DoctorTable = () => {
+    const { filteredDoctors } = useContext(DoctorContext);
+
     return <div className="row">
         <table>
             <thead>
@@ -15,8 +18,8 @@ const DoctorTable = (props) => {
             </thead>
             <tbody id="doctors">
                 {
-                    props.doctors.map((doctor) => {
-                        return <DoctorRow key={doctor.upin} doctor={doctor} updateDoctors={props.updateDoctors} />
+                    filteredDoctors.map((doctor) => {
+                        return <DoctorRow key={doctor.upin} doctor={doctor} />
                     })
                 }
             </tbody>

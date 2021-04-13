@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { changeDoctorAvailability } from "./DoctorRow.util";
 import "./DoctorRow.css";
+import { DoctorContext } from "../../context/DoctorContext";
 
 const DoctorRow = (props) => {
+    const { updateDoctors } = useContext(DoctorContext);
+
     const onClickButton = (doctor) => {
         changeDoctorAvailability(doctor).then((modifiedDoctor) => {
             modifiedDoctor.city = doctor.city;
             modifiedDoctor.zipcode = doctor.zipcode;
 
-            props.updateDoctors(modifiedDoctor);
+            updateDoctors(modifiedDoctor);
         });
     }
 
